@@ -11,4 +11,4 @@ password_input = input()
 if username_input == "admin" and password_input == "1234":
     print("Login successful.")
 else:
-    print("Login failed.")
+    print("invalid credentials.")

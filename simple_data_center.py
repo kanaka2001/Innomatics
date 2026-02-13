@@ -8,3 +8,6 @@ print(f"Original names: {names}")
 
 clean_list = [x.strip() for x in names]
 print(f"Cleaned names: {clean_list}")
+
+clean_list = [x.lower() for x in clean_list]
+print(f"Lowercase names: {clean_list}")

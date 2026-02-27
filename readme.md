@@ -1,2 +1,4 @@
 # innomatics intenship 
-week 1 done
+learning the python from basics
+
+# learn code

@@ -1,0 +1,59 @@
+from fastapi import FastAPI, Query
+
+from pydantic import BaseModel, Field
+
+ 
+
+app = FastAPI()
+
+ 
+
+class OrderRequest(BaseModel):
+
+    customer_name:    str = Field(..., min_length=2, max_length=100)
+
+    product_id:       int = Field(..., gt=0)
+
+    quantity:         int = Field(..., gt=0, le=100)
+
+    delivery_address: str = Field(..., min_length=10)
+
+ 
+
+products = [
+
+    {'id':1,'name':'Wireless Mouse','price':499,'category':'Electronics','in_stock':True},
+
+    {'id':2,'name':'Notebook',      'price': 99,'category':'Stationery', 'in_stock':True},
+
+    {'id':3,'name':'USB Hub',        'price':799,'category':'Electronics','in_stock':False},
+
+    {'id':4,'name':'Pen Set',         'price': 49,'category':'Stationery', 'in_stock':True},
+
+]
+
+orders = []
+
+order_counter = 1
+
+ 
+
+# ══ HELPER FUNCTIONS ═══════════════════════════════════════
+
+def find_product(product_id: int):
+
+    for p in products:
+
+        if p['id'] == product_id:
+
+            return p
+
+    return None
+
+ 
+
+def calculate_total(product: dict, quantity:
+
+
+
+
